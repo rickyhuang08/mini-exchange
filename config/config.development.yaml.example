@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+finnhub:
+  scheme: "wss"
+  host: "ws.finnhub.io"
+  symbols: ["AAPL", "GOOG", "MSFT", "ETH-USD", "BTC-USD", "EUR/USD", "GBP/USD", "AMZN"]
+
+jwt :
+  expiration: 24
+
+logger:
+  access_path: "/home/xander/yb-tech-skill-test/logger/access-log/"
+  error_path: "/home/xander/yb-tech-skill-test/logger/error-log/"

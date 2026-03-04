@@ -1,0 +1,36 @@
+# Binary files
+*.exe
+*.out
+*.so
+*.dll
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+
+# Compiled object files
+*.o
+*.a
+
+# Go modules and dependencies
+/go/bin/
+/go/pkg/
+/vendor/
+/config/keys/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.iml
+
+# Environment files
+.env.production
+.env.development
+config/keys  # If you store secrets in config files
+config/config.development.yaml
+config/config.production.yaml
+
+# Cache files
+*.DS_Store
+Thumbs.db
