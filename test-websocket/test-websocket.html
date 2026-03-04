@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const ws = new WebSocket('ws://localhost:8080/api/realtime/ws');
+
+ws.onopen = () => {
+    console.log('Connected');
+    ws.send(JSON.stringify({action: "subscribe", channel: "ticker", stock: "AAPL"}));
+    ws.send(JSON.stringify({action: "subscribe", channel: "trade", stock: "AAPL"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"ticker", stock:"MSFT"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"trade", stock:"MSFT"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"ticker", stock:"AMZN"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"trade", stock:"AMZN"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"ticker", stock:"GBP/USD"}));
+    ws.send(JSON.stringify({action:"subscribe", channel:"trade", stock:"GBP/USD"}));
+};
+
+ws.onmessage = (e) => {
+    console.log('Received:', JSON.parse(e.data));
+};
+</script>
+</body>
+</html>
